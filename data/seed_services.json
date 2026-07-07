@@ -1,0 +1,221 @@
+[
+  {
+    "name": "Birth Certificate",
+    "category": "service",
+    "description": "Official document recording the birth of a child, issued by the local municipal authority. Required for school admission, passport, and other identity proofs.",
+    "required_documents": [
+      "Hospital discharge summary / proof of birth",
+      "Parents' identity proof (Aadhaar / Voter ID)",
+      "Parents' address proof",
+      "Marriage certificate of parents",
+      "Affidavit (if registration is delayed beyond 21 days)"
+    ],
+    "eligibility": "Any child born in India. Registration should ideally be done within 21 days of birth.",
+    "how_to_apply_link": "https://crsorgi.gov.in/"
+  },
+  {
+    "name": "Death Certificate",
+    "category": "service",
+    "description": "Official document certifying the death of a person, issued by the local municipal authority. Required for legal proceedings, insurance claims, and property transfer.",
+    "required_documents": [
+      "Hospital death summary / proof of death",
+      "Identity proof of the deceased (Aadhaar / Voter ID)",
+      "Identity proof of the informant",
+      "Cremation / burial certificate",
+      "Affidavit (if registration is delayed)"
+    ],
+    "eligibility": "Any death occurring in India must be registered within 21 days.",
+    "how_to_apply_link": "https://crsorgi.gov.in/"
+  },
+  {
+    "name": "PAN Card",
+    "category": "service",
+    "description": "Permanent Account Number (PAN) card issued by the Income Tax Department. A 10-character alphanumeric identifier required for financial transactions, tax filing, and opening bank accounts.",
+    "required_documents": [
+      "Identity proof (Aadhaar / Voter ID / Passport)",
+      "Address proof (Aadhaar / Utility bill / Bank statement)",
+      "Date of birth proof (Birth certificate / Matriculation certificate)",
+      "Passport-size photograph"
+    ],
+    "eligibility": "Any Indian citizen, NRI, or entity (company/firm) can apply. No age restriction.",
+    "how_to_apply_link": "https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html"
+  },
+  {
+    "name": "Aadhaar Card",
+    "category": "service",
+    "description": "12-digit unique identity number issued by UIDAI to residents of India. Serves as proof of identity and address for availing government services, subsidies, and benefits.",
+    "required_documents": [
+      "Proof of identity (Passport / PAN / Voter ID / Driving License)",
+      "Proof of address (Passport / Utility bill / Bank statement / Ration card)",
+      "Date of birth proof (Birth certificate / Passport)",
+      "For children under 5: parent's Aadhaar + birth certificate"
+    ],
+    "eligibility": "Any resident of India, including children and infants.",
+    "how_to_apply_link": "https://uidai.gov.in/"
+  },
+  {
+    "name": "Passport",
+    "category": "service",
+    "description": "Travel document issued by the Ministry of External Affairs enabling international travel. Also serves as a strong identity and citizenship proof.",
+    "required_documents": [
+      "Aadhaar card",
+      "PAN card (if available)",
+      "Voter ID / Birth certificate for date-of-birth proof",
+      "Address proof (Aadhaar / Utility bill / Bank statement)",
+      "Passport-size photographs (as per specifications)",
+      "Old passport (for renewal)"
+    ],
+    "eligibility": "Any Indian citizen. Minors require parents' documents and consent.",
+    "how_to_apply_link": "https://www.passportindia.gov.in/"
+  },
+  {
+    "name": "Ration Card",
+    "category": "service",
+    "description": "Document issued by state governments to households eligible for purchasing subsidized food grains and other essential commodities from the Public Distribution System (PDS).",
+    "required_documents": [
+      "Aadhaar card of all family members",
+      "Address proof (electricity bill / rent agreement)",
+      "Income certificate",
+      "Passport-size photographs of head of family",
+      "Family declaration form"
+    ],
+    "eligibility": "Indian households, categorized by income level into APL (Above Poverty Line), BPL (Below Poverty Line), and AAY (Antyodaya Anna Yojana).",
+    "how_to_apply_link": "https://nfsa.gov.in/"
+  },
+  {
+    "name": "Voter ID (EPIC)",
+    "category": "service",
+    "description": "Electoral Photo Identity Card issued by the Election Commission of India. Required for voting in elections and also serves as identity proof.",
+    "required_documents": [
+      "Age proof (Birth certificate / Matriculation certificate)",
+      "Address proof (Aadhaar / Utility bill / Rent agreement)",
+      "Passport-size photograph",
+      "Form 6 (application for new voter registration)"
+    ],
+    "eligibility": "Indian citizens who have attained the age of 18 years.",
+    "how_to_apply_link": "https://voters.eci.gov.in/"
+  },
+  {
+    "name": "Driving License",
+    "category": "service",
+    "description": "Official document permitting an individual to operate motor vehicles on public roads, issued by the Regional Transport Office (RTO).",
+    "required_documents": [
+      "Age proof (Birth certificate / Aadhaar / Passport)",
+      "Address proof (Aadhaar / Utility bill / Passport)",
+      "Medical certificate (Form 1A)",
+      "Learner's license (must be at least 30 days old)",
+      "Passport-size photographs"
+    ],
+    "eligibility": "Indian citizens aged 18+ for motor vehicles (16+ for gearless two-wheelers up to 50cc with guardian consent).",
+    "how_to_apply_link": "https://parivahan.gov.in/"
+  },
+  {
+    "name": "PM Awas Yojana (PMAY)",
+    "category": "scheme",
+    "description": "Pradhan Mantri Awas Yojana provides financial assistance for construction or purchase of houses for the urban and rural poor, aiming for 'Housing for All'.",
+    "required_documents": [
+      "Aadhaar card",
+      "Income certificate",
+      "Property documents / No-home ownership declaration",
+      "Bank account details",
+      "Caste certificate (if applicable)",
+      "Passport-size photographs"
+    ],
+    "eligibility": "Economically Weaker Section (EWS) with annual income up to ₹3 lakh, Low Income Group (LIG) up to ₹6 lakh, and Middle Income Group (MIG) up to ₹18 lakh. Beneficiary family should not own a pucca house.",
+    "how_to_apply_link": "https://pmaymis.gov.in/"
+  },
+  {
+    "name": "PM Kisan Samman Nidhi",
+    "category": "scheme",
+    "description": "Income support scheme providing ₹6,000 per year in three equal installments to small and marginal farmer families having combined landholding up to 2 hectares.",
+    "required_documents": [
+      "Aadhaar card",
+      "Land ownership records / Khasra-Khatauni",
+      "Bank account passbook",
+      "Identity proof",
+      "Self-declaration form"
+    ],
+    "eligibility": "Small and marginal farmers with cultivable landholding up to 2 hectares. Excludes institutional landholders, income-tax payers, and government employees.",
+    "how_to_apply_link": "https://pmkisan.gov.in/"
+  },
+  {
+    "name": "Ayushman Bharat (PM-JAY)",
+    "category": "scheme",
+    "description": "Pradhan Mantri Jan Arogya Yojana provides health insurance coverage of ₹5 lakh per family per year for secondary and tertiary hospitalization to economically vulnerable families.",
+    "required_documents": [
+      "Aadhaar card",
+      "Ration card",
+      "SECC (Socio-Economic Caste Census) inclusion proof",
+      "Family identity documents",
+      "Hospital referral (at time of treatment)"
+    ],
+    "eligibility": "Families identified in SECC 2011 data. Covers approximately 55 crore beneficiaries (about 12 crore families). No cap on family size or age.",
+    "how_to_apply_link": "https://pmjay.gov.in/"
+  },
+  {
+    "name": "Sukanya Samriddhi Yojana",
+    "category": "scheme",
+    "description": "Government-backed savings scheme for the girl child, offering high interest rates and tax benefits. Designed to meet education and marriage expenses of the girl child.",
+    "required_documents": [
+      "Birth certificate of the girl child",
+      "Identity proof of parent/guardian (Aadhaar / PAN / Passport)",
+      "Address proof of parent/guardian",
+      "Passport-size photographs of parent and child"
+    ],
+    "eligibility": "Parents or legal guardians of a girl child below 10 years of age. Maximum 2 accounts per family (one per girl child).",
+    "how_to_apply_link": "https://www.india.gov.in/sukanya-samriddhi-yojna"
+  },
+  {
+    "name": "PM Jan Dhan Yojana",
+    "category": "scheme",
+    "description": "National financial inclusion program ensuring access to financial services like bank accounts, remittance, credit, insurance, and pension for every Indian household.",
+    "required_documents": [
+      "Aadhaar card (or Aadhaar enrollment slip)",
+      "Passport-size photograph",
+      "If Aadhaar not available: Voter ID / Driving License / MGNREGA card / letter from Gazetted officer with photo"
+    ],
+    "eligibility": "Any Indian citizen who does not have a bank account. Minors above 10 years can also open an account.",
+    "how_to_apply_link": "https://pmjdy.gov.in/"
+  },
+  {
+    "name": "MGNREGA (Job Card)",
+    "category": "scheme",
+    "description": "Mahatma Gandhi National Rural Employment Guarantee Act guarantees 100 days of wage employment per year to rural households whose adult members volunteer to do unskilled manual work.",
+    "required_documents": [
+      "Application in prescribed format (Form-1)",
+      "Passport-size photograph",
+      "Age proof",
+      "Address proof / proof of residence in the Gram Panchayat",
+      "Bank/Post office account details"
+    ],
+    "eligibility": "Adult members of rural households willing to do unskilled manual work. Must be a resident of the Gram Panchayat where application is made.",
+    "how_to_apply_link": "https://nrega.nic.in/"
+  },
+  {
+    "name": "PM Ujjwala Yojana",
+    "category": "scheme",
+    "description": "Provides free LPG connections to women of Below Poverty Line (BPL) households, aiming to replace unclean cooking fuels and improve health of rural women.",
+    "required_documents": [
+      "BPL certificate / SECC list inclusion proof",
+      "Aadhaar card (of applicant and all adult family members)",
+      "BPL ration card",
+      "Passport-size photograph",
+      "Bank account details",
+      "Address proof"
+    ],
+    "eligibility": "Adult women belonging to BPL households identified under SECC 2011. No LPG connection should exist in the household in any name.",
+    "how_to_apply_link": "https://www.pmujjwalayojana.com/"
+  },
+  {
+    "name": "Atal Pension Yojana",
+    "category": "scheme",
+    "description": "Government-backed pension scheme for unorganized sector workers, providing a guaranteed minimum pension of ₹1,000 to ₹5,000 per month after the age of 60.",
+    "required_documents": [
+      "Aadhaar card",
+      "Bank account / savings account passbook",
+      "Mobile number linked with bank account"
+    ],
+    "eligibility": "Indian citizens aged 18-40 years with a savings bank account. Not an income tax payer and not a member of any statutory social security scheme.",
+    "how_to_apply_link": "https://www.npscra.nsdl.co.in/scheme-details.php"
+  }
+]

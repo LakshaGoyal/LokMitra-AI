@@ -1,0 +1,161 @@
+"""Document Checklist Generator page for LokMitra AI.
+
+Provides interactive, printable document checklists for
+government services so citizens can track what they have ready.
+"""
+
+import uuid
+
+import streamlit as st
+from dotenv import load_dotenv
+
+from lib.db import get_all_services, get_database, get_mongo_client, seed_services
+from lib.i18n import get_label, language_selector
+from lib.utils import inject_custom_css, render_custom_sidebar
+
+load_dotenv()
+
+st.set_page_config(
+    page_title="Document Checklist — LokMitra AI",
+    page_icon="✅",
+    layout="wide",
+)
+
+# --- Unified Custom CSS Injected ---
+inject_custom_css()
+
+if "session_id" not in st.session_state:
+    st.session_state["session_id"] = str(uuid.uuid4())
+
+lang = language_selector()
+
+# --- Render Custom Sidebar Nav ---
+render_custom_sidebar()
+
+client = get_mongo_client()
+db = get_database(client)
+seed_services(db)
+
+# --- Header ---
+st.markdown(
+    "<h1 style='color:#0F172A;'>✅ Document Checklist Generator</h1>",
+    unsafe_allow_html=True,
+)
+st.markdown(
+    "<p style='color:#64748B;'>"
+    "Select a service to get a personalized document checklist. "
+    "Check off documents as you gather them!</p>",
+    unsafe_allow_html=True,
+)
+st.markdown("---")
+
+# --- Service Selection ---
+services = get_all_services(db)
+service_names = [s.get("name", "Unknown") for s in services]
+
+selected_service_name = st.selectbox(
+    label="Select a Government Service or Scheme",
+    options=service_names,
+    index=0,
+    key="checklist_service",
+)
+
+# Find the selected service
+selected_service = next(
+    (s for s in services if s.get("name") == selected_service_name), None
+)
+
+if selected_service:
+    docs = selected_service.get("required_documents", [])
+    service_name = selected_service.get("name", "Unknown")
+
+    st.markdown(f"### 📋 Checklist for: **{service_name}**")
+
+    # Description
+    with st.container(border=True):
+        st.markdown(f"**About:** {selected_service.get('description', 'N/A')}")
+        st.markdown(f"**Eligibility:** {selected_service.get('eligibility', 'N/A')}")
+        link = selected_service.get("how_to_apply_link", "")
+        if link:
+            st.markdown(f"**Apply:** [{link}]({link})")
+
+    st.markdown("---")
+
+    # Checklist Key
+    checklist_key = f"checklist_{service_name}"
+    if checklist_key not in st.session_state:
+        st.session_state[checklist_key] = {doc: False for doc in docs}
+
+    # Interactive Checklist
+    if docs:
+        st.markdown("### 📄 Required Documents")
+
+        checked_count = 0
+        total_docs = len(docs)
+
+        for i, doc in enumerate(docs):
+            col_check, col_doc = st.columns([0.08, 0.92])
+            with col_check:
+                is_checked = st.checkbox(
+                    label=f"doc_{i}",
+                    value=st.session_state[checklist_key].get(doc, False),
+                    key=f"doc_check_{service_name}_{i}",
+                    label_visibility="collapsed",
+                )
+                st.session_state[checklist_key][doc] = is_checked
+            with col_doc:
+                if is_checked:
+                    st.markdown(
+                        f"<span style='color:#22C55E; text-decoration:line-through;'>"
+                        f"✅ {doc}</span>",
+                        unsafe_allow_html=True,
+                    )
+                    checked_count += 1
+                else:
+                    st.markdown(f"⬜ {doc}")
+
+        # Progress
+        st.markdown("---")
+        progress = checked_count / total_docs if total_docs > 0 else 0
+        st.progress(progress)
+
+        col_prog, col_status = st.columns([3, 1])
+        with col_prog:
+            st.markdown(
+                f"**{checked_count}/{total_docs}** documents ready "
+                f"({progress * 100:.0f}%)"
+            )
+        with col_status:
+            if checked_count == total_docs:
+                st.success("🎉 All documents ready!")
+            elif checked_count > 0:
+                st.warning(f"📝 {total_docs - checked_count} remaining")
+            else:
+                st.info("📋 Start checking off documents")
+
+        # Downloadable text summary
+        st.markdown("---")
+        st.markdown("### 📥 Download Checklist")
+
+        checklist_text = f"Document Checklist — {service_name}\n"
+        checklist_text += "=" * 50 + "\n\n"
+        checklist_text += f"Service: {service_name}\n"
+        checklist_text += f"Eligibility: {selected_service.get('eligibility', 'N/A')}\n"
+        checklist_text += f"Apply at: {selected_service.get('how_to_apply_link', 'N/A')}\n\n"
+        checklist_text += "Required Documents:\n"
+        checklist_text += "-" * 30 + "\n"
+        for doc in docs:
+            check = "✅" if st.session_state[checklist_key].get(doc, False) else "⬜"
+            checklist_text += f"  {check}  {doc}\n"
+        checklist_text += f"\nProgress: {checked_count}/{total_docs} documents ready\n"
+        checklist_text += f"\n--- Generated by LokMitra AI ---\n"
+
+        st.download_button(
+            label="📥 Download as Text File",
+            data=checklist_text,
+            file_name=f"checklist_{service_name.replace(' ', '_').lower()}.txt",
+            mime="text/plain",
+            use_container_width=True,
+        )
+    else:
+        st.info("No specific document requirements listed for this service.")

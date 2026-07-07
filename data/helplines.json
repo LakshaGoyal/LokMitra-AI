@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Police Emergency",
+    "number": "100",
+    "category": "Emergency",
+    "description": "For any police-related emergency, crime, or law and order issue.",
+    "icon": "🚔",
+    "available": "24/7"
+  },
+  {
+    "name": "Fire Brigade",
+    "number": "101",
+    "category": "Emergency",
+    "description": "For fire emergencies and fire-related rescue operations.",
+    "icon": "🚒",
+    "available": "24/7"
+  },
+  {
+    "name": "Ambulance / Medical Emergency",
+    "number": "102 / 108",
+    "category": "Emergency",
+    "description": "For medical emergencies, ambulance service, and hospital transport.",
+    "icon": "🚑",
+    "available": "24/7"
+  },
+  {
+    "name": "National Emergency Number",
+    "number": "112",
+    "category": "Emergency",
+    "description": "Unified emergency number for police, fire, and ambulance services across India.",
+    "icon": "🆘",
+    "available": "24/7"
+  },
+  {
+    "name": "Women Helpline",
+    "number": "181",
+    "category": "Women & Children",
+    "description": "For women in distress — domestic violence, harassment, abuse, and safety concerns.",
+    "icon": "👩",
+    "available": "24/7"
+  },
+  {
+    "name": "Child Helpline (CHILDLINE)",
+    "number": "1098",
+    "category": "Women & Children",
+    "description": "For children in need of care and protection — abuse, trafficking, child labour.",
+    "icon": "👶",
+    "available": "24/7"
+  },
+  {
+    "name": "Senior Citizen Helpline",
+    "number": "14567",
+    "category": "Senior Citizens",
+    "description": "For senior citizens facing abuse, neglect, or needing assistance.",
+    "icon": "🧓",
+    "available": "24/7"
+  },
+  {
+    "name": "Anti-Corruption Helpline (CVC)",
+    "number": "1964",
+    "category": "Governance",
+    "description": "To report corruption in government departments and public services.",
+    "icon": "⚖️",
+    "available": "Office hours"
+  },
+  {
+    "name": "Cyber Crime Helpline",
+    "number": "1930",
+    "category": "Cyber Safety",
+    "description": "For reporting cyber crimes including online fraud, hacking, and identity theft.",
+    "icon": "💻",
+    "available": "24/7"
+  },
+  {
+    "name": "Consumer Helpline",
+    "number": "1800-11-4000",
+    "category": "Consumer Rights",
+    "description": "For consumer complaints, product grievances, and unfair trade practices.",
+    "icon": "🛒",
+    "available": "9:30 AM – 5:30 PM"
+  },
+  {
+    "name": "Railway Enquiry",
+    "number": "139",
+    "category": "Transport",
+    "description": "For railway ticket booking, PNR status, train schedules, and general enquiry.",
+    "icon": "🚂",
+    "available": "24/7"
+  },
+  {
+    "name": "Road Accident Emergency",
+    "number": "1073",
+    "category": "Transport",
+    "description": "For road accidents on National Highways — towing, medical aid, police assistance.",
+    "icon": "🚗",
+    "available": "24/7"
+  },
+  {
+    "name": "Disaster Management (NDMA)",
+    "number": "1078",
+    "category": "Disaster",
+    "description": "For natural disasters — floods, earthquakes, cyclones, and disaster relief coordination.",
+    "icon": "🌊",
+    "available": "24/7"
+  },
+  {
+    "name": "Gas Leak / LPG Emergency",
+    "number": "1906",
+    "category": "Utilities",
+    "description": "For reporting gas leaks and LPG cylinder-related emergencies.",
+    "icon": "🔥",
+    "available": "24/7"
+  },
+  {
+    "name": "Electricity Complaint",
+    "number": "1912",
+    "category": "Utilities",
+    "description": "For power outages, electrical hazards, and electricity billing complaints.",
+    "icon": "⚡",
+    "available": "24/7"
+  },
+  {
+    "name": "Blood Bank (Red Cross)",
+    "number": "1910",
+    "category": "Health",
+    "description": "For blood donation and blood requirement queries through Indian Red Cross Society.",
+    "icon": "🩸",
+    "available": "Office hours"
+  },
+  {
+    "name": "Mental Health Helpline (NIMHANS)",
+    "number": "080-46110007",
+    "category": "Health",
+    "description": "For mental health support, counseling, and psychological distress.",
+    "icon": "🧠",
+    "available": "24/7"
+  },
+  {
+    "name": "RTI Helpline",
+    "number": "1800-11-0031",
+    "category": "Governance",
+    "description": "For Right to Information queries and filing RTI applications.",
+    "icon": "📋",
+    "available": "Office hours"
+  },
+  {
+    "name": "Income Tax Helpline",
+    "number": "1800-180-1961",
+    "category": "Finance",
+    "description": "For income tax queries, e-filing support, and tax-related grievances.",
+    "icon": "💰",
+    "available": "Office hours"
+  },
+  {
+    "name": "EPFO Helpline",
+    "number": "1800-118-005",
+    "category": "Finance",
+    "description": "For EPF balance, withdrawal, transfer, and provident fund queries.",
+    "icon": "🏦",
+    "available": "Office hours"
+  }
+]

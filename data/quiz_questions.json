@@ -1,0 +1,107 @@
+[
+  {
+    "question": "What is the unified emergency number in India?",
+    "options": ["100", "112", "108", "181"],
+    "correct": 1,
+    "explanation": "112 is the unified emergency number in India, connecting you to police, fire, and ambulance services.",
+    "category": "Emergency Services"
+  },
+  {
+    "question": "Which document is mandatory for filing Income Tax returns in India?",
+    "options": ["Voter ID", "Aadhaar Card", "PAN Card", "Driving License"],
+    "correct": 2,
+    "explanation": "PAN (Permanent Account Number) Card is mandatory for filing income tax returns and all major financial transactions.",
+    "category": "Government Documents"
+  },
+  {
+    "question": "What is the full form of RTI?",
+    "options": ["Right to Integrity", "Right to Information", "Right to Investigation", "Right to Intervention"],
+    "correct": 1,
+    "explanation": "RTI stands for Right to Information — a law that empowers citizens to seek information from public authorities.",
+    "category": "Citizen Rights"
+  },
+  {
+    "question": "Under PM Awas Yojana, what is the maximum annual income for EWS category?",
+    "options": ["₹1 Lakh", "₹3 Lakh", "₹6 Lakh", "₹10 Lakh"],
+    "correct": 1,
+    "explanation": "Economically Weaker Section (EWS) households with annual income up to ₹3 Lakh are eligible for PM Awas Yojana.",
+    "category": "Government Schemes"
+  },
+  {
+    "question": "How many days of employment does MGNREGA guarantee per year?",
+    "options": ["50 days", "75 days", "100 days", "150 days"],
+    "correct": 2,
+    "explanation": "MGNREGA guarantees 100 days of wage employment per year to rural household adults willing to do unskilled manual work.",
+    "category": "Government Schemes"
+  },
+  {
+    "question": "What is the health insurance coverage under Ayushman Bharat (PM-JAY)?",
+    "options": ["₹1 Lakh per family", "₹2.5 Lakh per family", "₹5 Lakh per family", "₹10 Lakh per family"],
+    "correct": 2,
+    "explanation": "Ayushman Bharat PM-JAY provides health insurance coverage of ₹5 Lakh per family per year for secondary and tertiary hospitalization.",
+    "category": "Government Schemes"
+  },
+  {
+    "question": "Within how many days should a birth be registered in India?",
+    "options": ["7 days", "14 days", "21 days", "30 days"],
+    "correct": 2,
+    "explanation": "Under the Registration of Births and Deaths Act, births should be registered within 21 days. Delayed registration requires additional documentation.",
+    "category": "Government Documents"
+  },
+  {
+    "question": "What is the minimum age to apply for a Voter ID card in India?",
+    "options": ["16 years", "18 years", "21 years", "25 years"],
+    "correct": 1,
+    "explanation": "Any Indian citizen who has attained the age of 18 years is eligible to register as a voter and get a Voter ID (EPIC).",
+    "category": "Government Documents"
+  },
+  {
+    "question": "Which organization issues Aadhaar cards in India?",
+    "options": ["RBI", "UIDAI", "SEBI", "NPCI"],
+    "correct": 1,
+    "explanation": "UIDAI (Unique Identification Authority of India) is responsible for issuing Aadhaar — a 12-digit unique identification number.",
+    "category": "Government Documents"
+  },
+  {
+    "question": "How much annual income support does PM-KISAN provide to farmers?",
+    "options": ["₹2,000", "₹4,000", "₹6,000", "₹8,000"],
+    "correct": 2,
+    "explanation": "PM-KISAN provides ₹6,000 per year in three equal installments of ₹2,000 to small and marginal farmer families.",
+    "category": "Government Schemes"
+  },
+  {
+    "question": "What is the maximum age of a girl child for opening a Sukanya Samriddhi account?",
+    "options": ["5 years", "8 years", "10 years", "12 years"],
+    "correct": 2,
+    "explanation": "A Sukanya Samriddhi account can be opened for a girl child below 10 years of age by her parents or legal guardian.",
+    "category": "Government Schemes"
+  },
+  {
+    "question": "Which helpline number is dedicated to women in distress?",
+    "options": ["100", "181", "1098", "112"],
+    "correct": 1,
+    "explanation": "181 is the Women Helpline number for women facing domestic violence, harassment, abuse, and other safety concerns.",
+    "category": "Emergency Services"
+  },
+  {
+    "question": "What is the fee for filing an RTI application with a Central Government body?",
+    "options": ["Free", "₹10", "₹50", "₹100"],
+    "correct": 1,
+    "explanation": "The fee for filing an RTI application with a Central Government department is ₹10. BPL applicants are exempt from this fee.",
+    "category": "Citizen Rights"
+  },
+  {
+    "question": "Which portal is used for online passport applications in India?",
+    "options": ["DigiLocker", "Passport Seva", "UMANG", "e-District"],
+    "correct": 1,
+    "explanation": "Passport Seva (passportindia.gov.in) is the official portal for applying, renewing, and tracking passport applications.",
+    "category": "Government Documents"
+  },
+  {
+    "question": "What is the cyber crime reporting helpline number?",
+    "options": ["100", "112", "1930", "1800-11-4000"],
+    "correct": 2,
+    "explanation": "1930 is the national helpline for reporting cyber crimes including online fraud, hacking, and digital threats.",
+    "category": "Emergency Services"
+  }
+]
