@@ -103,7 +103,7 @@ for row_start in range(0, len(features), 4):
     for col, (title, desc, prefix, initials) in zip(cols, features[row_start : row_start + 4]):
         with col:
             matches = sorted(pages_root.glob(f"{prefix.split('/')[-1]}*.py"))
-            href = matches[0] if matches else None
+            href = f"pages/{matches[0].name}" if matches else None
             st.markdown(
                 f"""
                 <div class="lm-card lm-feature-card">
@@ -117,7 +117,7 @@ for row_start in range(0, len(features), 4):
                 unsafe_allow_html=True,
             )
             if href:
-                st.page_link(str(href), label=f"Open {title}", icon=":material/arrow_forward:")
+                st.page_link(href, label=f"Open {title}", icon=":material/arrow_forward:")
 
 st.markdown("### Operational readiness")
 mode = "Sandbox fallback" if is_using_fallback() else "MongoDB connected"

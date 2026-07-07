@@ -19,8 +19,8 @@ class TestSanitizeText:
         assert "<script>" not in result
         assert "</script>" not in result
         assert "Hello" in result
-        # Text content between tags is preserved (only tags are stripped)
-        assert "alert" in result
+        # Script contents are removed, not merely stripped of tags.
+        assert "alert" not in result
 
     def test_strips_nested_html(self) -> None:
         """Nested HTML tags should be fully removed."""
@@ -209,10 +209,10 @@ class TestGetStatusDisplay:
 
     def test_known_statuses(self) -> None:
         """Known statuses should return formatted strings."""
-        assert "📥" in get_status_display("Submitted")
-        assert "🟡" in get_status_display("In Review")
-        assert "🔵" in get_status_display("In Progress")
-        assert "✅" in get_status_display("Resolved")
+        assert get_status_display("Submitted") == "Submitted"
+        assert get_status_display("In Review") == "In Review"
+        assert get_status_display("In Progress") == "In Progress"
+        assert get_status_display("Resolved") == "Resolved"
 
     def test_unknown_status(self) -> None:
         """Unknown status should return the raw value."""

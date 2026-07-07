@@ -510,7 +510,7 @@ def render_custom_sidebar() -> None:
     for prefix, label, icon in nav_items:
         matches = sorted(pages_dir.glob(f"{prefix}*.py"))
         if matches:
-            st.sidebar.page_link(str(matches[0]), label=label, icon=icon)
+            st.sidebar.page_link(f"pages/{matches[0].name}", label=label, icon=icon)
 
     from lib.db import is_using_fallback
 

@@ -1,7 +1,16 @@
+[server]
+headless = true
+enableCORS = true
+enableXsrfProtection = true
+fileWatcherType = "auto"
+
+[browser]
+gatherUsageStats = false
+
 [theme]
 base = "light"
-primaryColor = "#1E3A8A"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F8FAFC"
-textColor = "#0F172A"
+primaryColor = "#1A73E8"
+backgroundColor = "#F6F7FB"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#111827"
 font = "sans serif"

@@ -1,8 +1,6 @@
-"""Feedback page for LokMitra AI.
+"""Feedback page for LokMitra AI."""
 
-Allows users to rate their experience and provide feedback
-to continuously improve the platform.
-"""
+from __future__ import annotations
 
 import uuid
 
@@ -10,104 +8,58 @@ import streamlit as st
 from dotenv import load_dotenv
 
 from lib.db import get_database, get_mongo_client, save_feedback
-from lib.i18n import get_label, language_selector
-from lib.utils import check_rate_limit, sanitize_text, inject_custom_css, render_custom_sidebar
+from lib.i18n import language_selector
+from lib.utils import check_rate_limit, inject_custom_css, render_custom_sidebar, render_page_header, sanitize_text
 
 load_dotenv()
 
-st.set_page_config(
-    page_title="Feedback — LokMitra AI",
-    page_icon="⭐",
-    layout="wide",
-)
-
-# --- Unified Custom CSS Injected ---
+st.set_page_config(page_title="Feedback | LokMitra AI", page_icon="FB", layout="wide")
 inject_custom_css()
 
 if "session_id" not in st.session_state:
     st.session_state["session_id"] = str(uuid.uuid4())
 
-lang = language_selector()
-
-# --- Render Custom Sidebar Nav ---
+language_selector()
 render_custom_sidebar()
 
 client = get_mongo_client()
 db = get_database(client)
 
-# --- Header ---
-st.markdown(
-    "<h1 style='color:#0F172A;'>⭐ Your Feedback Matters</h1>",
-    unsafe_allow_html=True,
+render_page_header(
+    "Feedback & Support",
+    "Rate the civic workflows and share product feedback. Signals are stored through the same MongoDB or sandbox adapter as the rest of the app.",
+    "Quality loop",
 )
-st.markdown(
-    "<p style='color:#64748B;'>"
-    "Help us improve LokMitra AI! Rate your experience and "
-    "share your suggestions.</p>",
-    unsafe_allow_html=True,
-)
-st.markdown("---")
 
-# --- Feedback Form ---
 with st.form("feedback_form"):
-    # Feature rating
-    st.markdown("### How would you rate these features?")
-
+    st.markdown("### Rate core workflows")
     features = {
-        "AI Chat Assistant": "💬",
-        "Government Services Explorer": "🏛️",
-        "Issue Reporting": "📢",
-        "Complaint Tracking": "📋",
-        "Scheme Recommendations": "🎯",
-        "Overall Experience": "🌟",
+        "AI Chat Assistant": "AI",
+        "Government Services Explorer": "Services",
+        "Issue Reporting": "Reports",
+        "Complaint Tracking": "Tracking",
+        "Scheme Recommendations": "Schemes",
+        "Overall Experience": "Overall",
     }
 
     ratings = {}
     cols = st.columns(2)
-    for i, (feature, icon) in enumerate(features.items()):
+    for i, (feature, label) in enumerate(features.items()):
         with cols[i % 2]:
-            ratings[feature] = st.slider(
-                label=f"{icon} {feature}",
-                min_value=1,
-                max_value=5,
-                value=4,
-                key=f"rating_{feature}",
-            )
-            stars = "⭐" * ratings[feature]
-            st.markdown(
-                f"<div style='color:#F59E0B; margin-top:-0.5rem; "
-                f"margin-bottom:1rem;'>{stars}</div>",
-                unsafe_allow_html=True,
-            )
+            ratings[feature] = st.slider(label=f"{label}: {feature}", min_value=1, max_value=5, value=4)
 
-    st.markdown("---")
-
-    # Written feedback
-    st.markdown("### 💭 Additional Comments")
     comment = st.text_area(
-        label="Share your thoughts, suggestions, or report any issues",
-        placeholder=(
-            "What did you like? What can we improve?\n"
-            "Any features you'd like to see added?"
-        ),
+        "Additional comments",
+        placeholder="What worked well? What confused you? What should the next version include?",
         max_chars=1000,
         height=120,
-        key="feedback_comment",
     )
-
-    # Usefulness
     would_recommend = st.radio(
-        label="Would you recommend LokMitra AI to other citizens?",
-        options=["Yes, definitely!", "Maybe", "Not yet"],
+        "Would you recommend LokMitra AI to other citizens?",
+        ["Yes, definitely", "Maybe", "Not yet"],
         horizontal=True,
-        key="feedback_recommend",
     )
-
-    submitted = st.form_submit_button(
-        "📨 Submit Feedback",
-        use_container_width=True,
-        type="primary",
-    )
+    submitted = st.form_submit_button("Submit feedback", use_container_width=True, type="primary")
 
 if submitted:
     allowed, wait_time = check_rate_limit("feedback_rate_limit", cooldown_seconds=10.0)
@@ -116,8 +68,6 @@ if submitted:
     else:
         clean_comment = sanitize_text(comment, max_length=1000)
         overall_rating = ratings.get("Overall Experience", 4)
-
-        # Save each feature rating
         all_saved = True
         for feature, rating in ratings.items():
             success = save_feedback(
@@ -131,20 +81,10 @@ if submitted:
                 all_saved = False
 
         if all_saved:
-            st.balloons()
-            st.success("🎉 Thank you for your feedback! Your input helps us improve.")
-
-            # Display thank you message
+            st.success("Thank you. Your feedback has been recorded.")
             with st.container(border=True):
-                st.markdown(
-                    f"<div style='text-align:center; padding:1rem;'>"
-                    f"<div style='font-size:3rem;'>🙏</div>"
-                    f"<h3>Thank You!</h3>"
-                    f"<p style='color:#64748B;'>"
-                    f"Your overall rating: {'⭐' * overall_rating} ({overall_rating}/5)<br>"
-                    f"Recommendation: {would_recommend}</p>"
-                    f"</div>",
-                    unsafe_allow_html=True,
-                )
+                st.metric("Overall rating", f"{overall_rating}/5", would_recommend)
+                if clean_comment:
+                    st.markdown(f"**Comment:** {clean_comment}")
         else:
             st.error("Something went wrong. Please try again.")

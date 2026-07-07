@@ -19,13 +19,10 @@ import streamlit as st
 # Try importing pymongo; if MongoDB is not available, we use fallback
 try:
     from pymongo import MongoClient
-    from pymongo.database import Database
-    from pymongo.errors import PyMongoError
 
     PYMONGO_AVAILABLE = True
 except ImportError:
     PYMONGO_AVAILABLE = False
-    PyMongoError = Exception  # type: ignore[misc, assignment]
 
 from lib.fallback_db import FallbackDatabase
 
